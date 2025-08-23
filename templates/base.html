@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>⚽ FootballHub</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #222; color: #fff; padding: 1rem; text-align: center; }
+        nav { background: #444; padding: 0.5rem; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { padding: 20px; }
+        .card { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background: #333; color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⚽ FootballHub</h1>
+        <p>All-in-one place for Football Fans</p>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/predict">Predict Match</a>
+        <a href="/table">League Table</a>
+        <a href="#">Top Scorers</a>
+        <a href="#">Fixtures</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

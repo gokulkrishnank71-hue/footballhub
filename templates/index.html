@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FootballHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Navy Blue Gradient Background */
+    body {
+      background: linear-gradient(135deg, #0a192f, #1e3a8a, #1e40af, #000814);
+      background-size: 300% 300%;
+      animation: gradientShift 10s ease infinite;
+      color: white;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .glow {
+      text-shadow: 0 0 15px rgba(59,130,246,0.8), 0 0 30px rgba(59,130,246,0.6);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center text-center">
+
+  <!-- Hero Section -->
+  <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-2xl text-white">
+  ⚽ FootballHub
+</h1>
+
+  <p class="text-lg md:text-2xl font-medium text-gray-200">
+    All-in-One Place for Football Fans
+  </p>
+  <p class="mt-2 text-md md:text-xl text-gray-300">
+    News • Scores • Predictions • Stats
+  </p>
+  <div class="mt-6 flex gap-4">
+    <a href="/predict" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-lg font-semibold transition transform hover:scale-110">
+      🔮 Predict a Match
+    </a>
+    <a href="/scores" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow-lg font-semibold transition transform hover:scale-110">
+      📊 View Live Scores
+    </a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>📊 League Table</h2>
+<table>
+    <tr>
+        <th>Pos</th>
+        <th>Team</th>
+        <th>Played</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>Points</th>
+    </tr>
+    {% for row in table %}
+    <tr>
+        <td>{{ row.position }}</td>
+        <td>{{ row.team }}</td>
+        <td>{{ row.played }}</td>
+        <td>{{ row.won }}</td>
+        <td>{{ row.drawn }}</td>
+        <td>{{ row.lost }}</td>
+        <td><strong>{{ row.points }}</strong></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
