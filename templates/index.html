@@ -23,20 +23,36 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-start items-center text-center pt-16">
+<body class="min-h-screen flex flex-col justify-center items-center text-center px-4">
 
   <!-- Hero Section -->
   <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-2xl text-white">
-  ⚽ FootballHub TEST
-</h1>
+    ⚽ FootballHub
+  </h1>
 
-
-  <p class="text-lg md:text-2xl font-medium text-gray-200 mt-4">
+  <p class="text-lg md:text-2xl font-medium text-gray-200">
     All-in-One Place for Football Fans
   </p>
   <p class="mt-2 text-md md:text-xl text-gray-300">
     News • Scores • Predictions • Stats
   </p>
+
+  <!-- 🔎 Search Bar -->
+  <form action="/team" method="GET" class="mt-6 flex w-full max-w-md">
+    <input 
+      type="text" 
+      name="team" 
+      placeholder="Search for a team..." 
+      class="flex-1 px-4 py-3 rounded-l-xl text-black focus:outline-none"
+      required>
+    <button 
+      type="submit" 
+      class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-r-xl shadow-lg font-semibold transition">
+      🔎 Search
+    </button>
+  </form>
+
+  <!-- Buttons -->
   <div class="mt-6 flex gap-4">
     <a href="/predict" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-lg font-semibold transition transform hover:scale-110">
       🔮 Predict a Match

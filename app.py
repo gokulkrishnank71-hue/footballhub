@@ -1,18 +1,27 @@
-from flask import Flask, render_template
-import requests
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-NEWS_API_KEY = "54a9bcd2b0e44c35abc8dc3b7dc5fe6c"  # Replace with your NewsAPI key
-
+# Home route
 @app.route("/")
 def home():
-    # Get latest football news
-    url = f"https://newsapi.org/v2/everything?q=football&language=en&sortBy=publishedAt&apiKey={NEWS_API_KEY}"
-    response = requests.get(url).json()
-    articles = response.get("articles", [])[:10]  # limit to 10 articles
+    return render_template("index.html")
 
-    return render_template("index.html", articles=articles)
+# Team search route
+@app.route("/team")
+def team():
+    team_name = request.args.get("team")
+    return render_template("team.html", team=team_name)
+
+# Predictions route (placeholder)
+@app.route("/predict")
+def predict():
+    return "<h1>🔮 Match Prediction feature coming soon!</h1>"
+
+# Live scores route (placeholder)
+@app.route("/scores")
+def scores():
+    return "<h1>📊 Live Scores feature coming soon!</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)
