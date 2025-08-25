@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ team_name }} - FootballHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-black text-white flex flex-col items-center p-6">
+
+  <!-- Header -->
+  <h1 class="text-4xl font-extrabold mb-4">⚽ {{ team_name }}</h1>
+  <p class="text-lg text-gray-300 mb-6">Team Overview & Stats</p>
+
+  <!-- Recent Matches -->
+  <div class="w-full max-w-2xl bg-gray-800 p-6 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-4">Recent Matches</h2>
+    <ul class="space-y-2">
+      {% for match in recent_matches %}
+        <li class="p-3 bg-gray-700 rounded-lg flex justify-between">
+          <span>{{ match.opponent }}</span>
+          <span class="{% if match.result == 'W' %}text-green-400{% elif match.result == 'L' %}text-red-400{% else %}text-yellow-400{% endif %}">
+            {{ match.result }}
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Back button -->
+  <div class="mt-6">
+    <a href="/" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg shadow-md">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>
